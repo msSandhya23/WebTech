@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="./font/fontawesome-free-6.6.0-web/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a href="#" class="navbar-brand">Amazon</a>
+        <button class="btn btn-warning btn-sm" id="reg-btn">Register</button>
+      </div>
+    </nav>
+    <section class="container-fluid mt-3">
+      <div class="row">
+        <div class="col-3 m-auto d-none" id="reg-modal">
+          <div class="card">
+            <div class="card-header bg-dark text-white text-center">
+              <h2>
+                Register Here
+                <span class="float-end">
+                  <i class="fa-solid fa-rectangle-xmark" id="close-btn"></i
+                ></span>
+              </h2>
+            </div>
+            <div class="card-body">
+              <form>
+                <div class="form-group mb-2">
+                  <input
+                    type="text"
+                    placeholder="Enter Username/Email"
+                    class="form-control"
+                  />
+                </div>
+                <div class="form-group mb-2">
+                  <input
+                    type="text"
+                    placeholder="Password"
+                    class="form-control"
+                  />
+                </div>
+                <div class="form-group mb-2">
+                  <input
+                    type="text"
+                    placeholder="Enter Conform Password"
+                    class="form-control"
+                  />
+                </div>
+                <div class="form-group mb-2">
+                  <input type="submit" class="btn btn-success" />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer style="margin-bottom: 500px">
+      <script>
+        let regBtn = document.getElementById("reg-btn");
+        let closeBtn = document.getElementById("close-btn");
+        let regModalTag = document.getElementById("reg-modal");
+
+        regBtn.addEventListener("click", function () {
+          regModalTag.classList.remove("d-none");
+        });
+
+        closeBtn.addEventListener("click", function () {
+          regModalTag.classList.add("d-none");
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.key == "Escape" && !regModalTag.classList.contains("d-none")) {
+            alert("Escape");
+            regModalTag.classList.add("d-none");
+          }
+        });
+      </script>
+    </footer>
+  </body>
+</html>

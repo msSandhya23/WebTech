@@ -1,0 +1,21 @@
+header{
+    background-color: black;
+    color: #ffffff;
+    padding: 10px;
+}
+header>h1::first-letter{
+    color: rgb(111, 255, 0);
+    font-size: 40px;
+    
+}
+button{
+    background-color: aqua;
+    margin-bottom: 1rem;
+    
+}
+tr{
+    text-align: center;
+}
+.btnp{
+    cursor: pointer;
+}
