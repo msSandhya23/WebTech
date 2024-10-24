@@ -3,6 +3,7 @@ let taskInput = document.getElementById("task-input");
 let taskList = document.getElementById("task-list");
 let formButton = document.getElementById("form-btn");
 
+// ! getting the tasks from the local storage
 let savedTask = localStorage.getItem("tasks")
   ? JSON.parse(localStorage.getItem("tasks"))
   : [];
