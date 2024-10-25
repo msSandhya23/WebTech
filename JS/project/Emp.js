@@ -56,31 +56,39 @@ let table = document.getElementById("empTable");
 let tbody = document.getElementById("tbody");
 table.style.display = "none";
 
-allBtn.addEventListener("click", function () {
-  table.style.display = "block";
 
-  emp.map((emp) => {
+
+function displayEmp(empList){
+  table.style.display = "table";
+
+  tbody.innerHTML = "";
+
+  empList.map((emp) => {
     let tr = document.createElement("tr");
-    tr.className = "text-center border border-dark border-2";
-    let td = document.createElement("td");
-    td.textContent = emp.id;
-    tr.appendChild(td);
-    td = document.createElement("td");
-    td.textContent = emp.Ename;
-    tr.appendChild(td);
-    td = document.createElement("td");
-    td.textContent = emp.email;
-    tr.appendChild(td);
-    td = document.createElement("td");
-    td.textContent = emp.company;
-    tr.appendChild(td);
-    td = document.createElement("td");
-    td.textContent = emp.gender;
-    tr.appendChild(td);
-    td = document.createElement("td");
-    td.textContent = emp.salary;
-    tr.appendChild(td);
-    console.log(tr);
+    let rows=`
+      <td>${emp.id}</td>
+      <td>${emp.Ename}</td>
+      <td>${emp.email}</td>
+      <td>${emp.company}</td>
+      <td>${emp.gender}</td>
+      <td>${emp.salary}</td>
+    `
+    tr.innerHTML = rows;
     tbody.appendChild(tr);
   });
+}
+
+allBtn.addEventListener("click", function () {
+  displayEmp(emp)
 });
+
+maleBtn.addEventListener("click", function () {
+  let maleEmp=emp.filter((emp) => emp.gender == "Male");
+  displayEmp(maleEmp)
+})
+
+femaleBtn.addEventListener("click", function () {
+ let femaleEmp=emp.filter((emp) => emp.gender == "Female");
+ displayEmp(femaleEmp)
+
+})
