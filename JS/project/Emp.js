@@ -48,48 +48,12 @@ let emp = [
     salary: 33000,
   },
 ];
-let allEmpBtn = document.getElementById("allEmpBtn");
-let maleEmpBtn = document.getElementById("maleEmpBtn");
-let femaleEmpBtn = document.getElementById("femaleEmpBtn");
-let empTable = document.getElementById("empTable");
+let allBtn = document.getElementById("allEmpBtn");
+let maleBtn = document.getElementById("maleEmpBtn");
+let femaleBtn = document.getElementById("femaleEmpBtn");
+
+let table = document.getElementById("empTable");
 let tbody = document.getElementById("tbody");
-<<<<<<< HEAD
-empTable.style.display = "none";
-function displayId(empList) {
-  tbody.innerHTML = "";
-  empTable.style.display = "table";
-  empList.map((emp) => {
-    let tr = document.createElement("tr");
-    let rows = `
-    <td>${emp.id}</td>
-    <td>${emp.Ename}</td>
-    <td>${emp.email}</td>
-    <td>${emp.company}</td>
-    <td>${emp.gender}</td>
-    <td>${emp.salary}</td>
-    `;
-    tr.innerHTML = rows;
-
-    tbody.append(tr);
-  })
-}
-
-allEmpBtn.addEventListener("click", function () {
-  displayId(emp);
-});
-
-maleEmpBtn.addEventListener("click", function () {
-  let maleEmp = emp.filter((emp) => emp.gender == "Male");
-  displayId(maleEmp);
-});
-
-femaleEmpBtn.addEventListener("click", function () {
-  let femaleEmp = emp.filter((emp) => emp.gender == "Female");
-  displayId(femaleEmp); 
-});
-
-
-=======
 table.style.display = "none";
 
 
@@ -128,4 +92,3 @@ femaleBtn.addEventListener("click", function () {
  displayEmp(femaleEmp)
 
 })
->>>>>>> 9204c3585ee0f57f3b632cca1fccf4894b4ddbaa
