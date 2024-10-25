@@ -53,6 +53,7 @@ let maleEmpBtn = document.getElementById("maleEmpBtn");
 let femaleEmpBtn = document.getElementById("femaleEmpBtn");
 let empTable = document.getElementById("empTable");
 let tbody = document.getElementById("tbody");
+<<<<<<< HEAD
 empTable.style.display = "none";
 function displayId(empList) {
   tbody.innerHTML = "";
@@ -88,3 +89,43 @@ femaleEmpBtn.addEventListener("click", function () {
 });
 
 
+=======
+table.style.display = "none";
+
+
+
+function displayEmp(empList){
+  table.style.display = "table";
+
+  tbody.innerHTML = "";
+
+  empList.map((emp) => {
+    let tr = document.createElement("tr");
+    let rows=`
+      <td>${emp.id}</td>
+      <td>${emp.Ename}</td>
+      <td>${emp.email}</td>
+      <td>${emp.company}</td>
+      <td>${emp.gender}</td>
+      <td>${emp.salary}</td>
+    `
+    tr.innerHTML = rows;
+    tbody.appendChild(tr);
+  });
+}
+
+allBtn.addEventListener("click", function () {
+  displayEmp(emp)
+});
+
+maleBtn.addEventListener("click", function () {
+  let maleEmp=emp.filter((emp) => emp.gender == "Male");
+  displayEmp(maleEmp)
+})
+
+femaleBtn.addEventListener("click", function () {
+ let femaleEmp=emp.filter((emp) => emp.gender == "Female");
+ displayEmp(femaleEmp)
+
+})
+>>>>>>> 9204c3585ee0f57f3b632cca1fccf4894b4ddbaa
