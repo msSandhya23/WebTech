@@ -48,39 +48,43 @@ let emp = [
     salary: 33000,
   },
 ];
-let allBtn = document.getElementById("allEmpBtn");
-let maleBtn = document.getElementById("maleEmpBtn");
-let femaleBtn = document.getElementById("femaleEmpBtn");
-
-let table = document.getElementById("empTable");
+let allEmpBtn = document.getElementById("allEmpBtn");
+let maleEmpBtn = document.getElementById("maleEmpBtn");
+let femaleEmpBtn = document.getElementById("femaleEmpBtn");
+let empTable = document.getElementById("empTable");
 let tbody = document.getElementById("tbody");
-table.style.display = "none";
-
-allBtn.addEventListener("click", function () {
-  table.style.display = "block";
-
-  emp.map((emp) => {
+empTable.style.display = "none";
+function displayId(empList) {
+  tbody.innerHTML = "";
+  empTable.style.display = "table";
+  empList.map((emp) => {
     let tr = document.createElement("tr");
-    tr.className = "text-center border border-dark border-2";
-    let td = document.createElement("td");
-    td.textContent = emp.id;
-    tr.appendChild(td);
-    td = document.createElement("td");
-    td.textContent = emp.Ename;
-    tr.appendChild(td);
-    td = document.createElement("td");
-    td.textContent = emp.email;
-    tr.appendChild(td);
-    td = document.createElement("td");
-    td.textContent = emp.company;
-    tr.appendChild(td);
-    td = document.createElement("td");
-    td.textContent = emp.gender;
-    tr.appendChild(td);
-    td = document.createElement("td");
-    td.textContent = emp.salary;
-    tr.appendChild(td);
-    console.log(tr);
-    tbody.appendChild(tr);
-  });
+    let rows = `
+    <td>${emp.id}</td>
+    <td>${emp.Ename}</td>
+    <td>${emp.email}</td>
+    <td>${emp.company}</td>
+    <td>${emp.gender}</td>
+    <td>${emp.salary}</td>
+    `;
+    tr.innerHTML = rows;
+
+    tbody.append(tr);
+  })
+}
+
+allEmpBtn.addEventListener("click", function () {
+  displayId(emp);
 });
+
+maleEmpBtn.addEventListener("click", function () {
+  let maleEmp = emp.filter((emp) => emp.gender == "Male");
+  displayId(maleEmp);
+});
+
+femaleEmpBtn.addEventListener("click", function () {
+  let femaleEmp = emp.filter((emp) => emp.gender == "Female");
+  displayId(femaleEmp); 
+});
+
+
