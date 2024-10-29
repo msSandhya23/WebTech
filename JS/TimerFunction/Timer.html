@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <link rel="stylesheet" href="./../bootstrap/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a href="#" class="navbar-brand">Watch Timer</a>
+      </div>
+    </nav>
+    <section class="container-fluid mt-3">
+      <div class="row">
+        <div class="col-5 m-auto">
+          <div class="card">
+            <div class="card-body text-center bg-dark p-5 text-white">
+              <h1>
+                <span id="min">00</span>
+                <span id="sec">00</span>
+                <span id="m-sec">00</span>
+              </h1>
+              <div class="buttons mt-3">
+                <button class="btn btn-success btn-sm" id="start-btn">
+                  Start
+                </button>
+                <button class="btn btn-danger btn-sm" id="stop-btn">
+                  Stop
+                </button>
+                <button class="btn btn-warning btn-sm" id="reset-btn">
+                  Reset
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script src="Timer.js"></script>
+</html>

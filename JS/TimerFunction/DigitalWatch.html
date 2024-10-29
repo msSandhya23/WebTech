@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <link rel="stylesheet" href="./../bootstrap/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <section class="container-fluid mt-3">
+      <div class="row">
+        <div class="col-3 m-auto">
+          <div class="card">
+            <div class="card-body bg-dark text-center text-white">
+              <h2>Digital Watch</h2>
+              <h5>Asia/Kolkata</h5>
+              <h3 id="time-display">Time</h3>
+              <h5 id="date-display">Date</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      let displayTimeTag = document.getElementById("time-display");
+      let displayDateTag = document.getElementById("date-display");
+      function timer() {
+        let currentTime = new Date().toLocaleTimeString();
+        let currentDate = new Date().toLocaleDateString();
+
+        displayTimeTag.textContent = currentTime;
+        displayDateTag.textContent = currentDate;
+      }
+      setInterval(timer, 1000);
+    </script>
+  </body>
+</html>
